@@ -1,6 +1,11 @@
 {
   "name": "sequence-planner",
   "version": "0.1.0",
+  "author": {
+    "name": "Md Abdul Munim",
+    "url": "https://www.linkedin.com/in/munimdibosh/",
+    "email": "abdulmunim.buet@gmail.com"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
