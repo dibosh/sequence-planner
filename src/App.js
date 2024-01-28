@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import { GanttChart } from './components';
 import './app.css';
 
 function App() {
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+
+  const tasks = [
+    {
+      label: 'Offline Detector',
+      color: '#76c893',
+      spanStartCol: -5,
+      spanStartSegment: 0,
+      spanEndCol: 9,
+      spanEndSegment: 1,
+    },
+  ];
+
   return (
-    <div className="app">
-      <header className="app-header">
-        <img src={logo} className="app-logo" alt="logo" />
-        <p>
-          Edit <code>src/app.js</code> and save to reload.
-        </p>
-        <a
-          className="app-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className="app">
+        <div className="task-input-pane"></div>
+        <GanttChart className="gantt" headerLabels={months} rowSpans={tasks} />
+      </div>
     </div>
   );
 }
