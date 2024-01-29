@@ -12,3 +12,36 @@ code {
     monospace;
 }
 
+label {
+  display: block;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+select, input, button {
+  padding: 8px;
+}
+
+/* Helper classes */
+.horizontal-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.vertical-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vertical-group-gap-12px {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.expand-half {
+  flex: 1 1 0; /* dictating that the parent must be a horizontal group */
+}
+

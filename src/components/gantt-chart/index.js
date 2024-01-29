@@ -4,6 +4,7 @@ import { Body } from './body';
 import './styles.css';
 
 export const GanttChart = ({
+  id = '',
   className = '',
   headerLabels = [],
   segmentPerColumn = 2,
@@ -24,7 +25,7 @@ export const GanttChart = ({
   const colFiller = Array(headerLabels.length * segmentPerColumn).fill('');
 
   return (
-    <table className={className}>
+    <table id={id} className={className}>
       <thead className="header">
         <tr>
           <th>Tasks</th>

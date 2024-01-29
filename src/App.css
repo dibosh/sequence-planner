@@ -1,16 +1,31 @@
 .wrapper {
-  padding: 20px 50px;
+  padding: 20px;
 }
 
 .app {
   display: flex;
-  flex-direction: column;
+  gap: 16px;
+  flex-wrap: none;
+}
+
+@media only screen and (max-width: 1300px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .app .task-input-pane {
+    flex: 1 1 0;
+  }
+  
+  .app .gantt {
+    flex: 1 1 0;
+  }
 }
 
 .app .task-input-pane {
-  width: 30%;
+  flex: 0.2 0.2 0;
 }
 
 .app .gantt {
-  width: auto;
+  flex: 0.8 0.8 0;
 }

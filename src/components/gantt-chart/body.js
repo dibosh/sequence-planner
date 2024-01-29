@@ -11,7 +11,6 @@ export const Body = ({
   const boundValueWithinRange = (value, end) =>
     value < 0 ? 0 : value >= end ? end - 1 : value;
 
-  const spanBorderRadius = 8;
   const transparentColor = 'transparent';
 
   return (
@@ -67,15 +66,8 @@ export const Body = ({
                   style.borderRightColor = transparentColor;
                 }
 
-                if (idx === spanStartIdx) {
-                  style.borderTopLeftRadius = spanBorderRadius;
-                  style.borderBottomLeftRadius = spanBorderRadius;
-                }
-
                 if (idx === spanEndIdx) {
                   isSpanClosed = true;
-                  style.borderTopRightRadius = spanBorderRadius;
-                  style.borderBottomRightRadius = spanBorderRadius;
                   style.borderLeftColor = transparentColor;
                 }
               }
