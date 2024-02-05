@@ -37,7 +37,6 @@ function App() {
   }) => {
     tasks.push({
       id: uid(),
-      color: '#ffb7032f',
       taskName,
       startMonth,
       startSprint,

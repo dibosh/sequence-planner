@@ -19,7 +19,8 @@ export const Header = ({ tasks, ganttChartId }) => {
       <div className="horizontal-group header-wrapper">
         <div className="vertical-group title-group">
           <h1 className="title">
-            Task Sequence Planner <span className="label">Sprint Based</span>
+            Task Sequence Planner{'  '}
+            <span className="label">Sprint Based</span>
           </h1>
           <p className="subtitle">
             Let's you create a sequence/gantt chart of your tasks, no fuss!

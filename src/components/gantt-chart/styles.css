@@ -1,22 +1,27 @@
 table {
   color: #0d1b2a;
   background: white;
-  border: 1px solid #adb5bd;
+  border: 1px solid #eee;
   border-collapse: collapse;
   text-align: center;
   line-height: 16px;
+  height: 100%;
 }
 
 table thead th {
   color: #1b263b;
-  background: #ced4da;
-  font-size: 14px;
+  background: #f8f8f8;
+  font-size: 12px;
 }
 
 table th,
 table td {
-  padding: 12px;
-  border: 1px solid #adb5bd;
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+}
+
+table td:nth-child(even) {
+  background-color: #f8f8f8;
 }
 
 table tr.subheader td {
@@ -25,6 +30,43 @@ table tr.subheader td {
 
 table tbody {
   font-size: 12px;
+}
+
+.span-segment {
+  background-color: white;
+  height: 20px;
+  color: #1b263b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-top: 1px solid #8e8e8e;
+  border-bottom: 1px solid #8e8e8e;
+}
+
+.span-start {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-left: 1px solid #8e8e8e;;
+}
+
+.span-end {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-right: 1px solid #8e8e8e;
+}
+
+.segment-column {
+  width: 2%;
+}
+
+.segment-column.item-title {
+  width: 22%;
+  text-align: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 14px;
+  text-transform: capitalize;
 }
 
 

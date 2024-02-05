@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const MonthSprintInputGroup = ({
   name,
@@ -14,6 +14,10 @@ export const MonthSprintInputGroup = ({
     month,
     sprint,
   });
+
+  useEffect(() => {
+    setMonthSprint({ month, sprint });
+  }, [month, sprint]);
 
   const getChangeHandler = (valueName) => {
     return (evt) => {

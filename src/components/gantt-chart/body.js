@@ -11,8 +11,6 @@ export const Body = ({
   const boundValueWithinRange = (value, end) =>
     value < 0 ? 0 : value >= end ? end - 1 : value;
 
-  const transparentColor = 'transparent';
-
   return (
     <>
       {rows.map((_, idx) => {
@@ -42,37 +40,34 @@ export const Body = ({
             ? segmentedColIndex(spanEndCol, spanEndSegment, segmentPerColumn)
             : -1;
 
-        let isSpanClosed = false;
+        const spanLength = spanEndIdx - spanStartIdx + 1;
 
         return (
           <tr key={idx}>
-            <td className="segment-column">{label || '--'}</td>
+            <td className="segment-column item-title">{label || '--'}</td>
             <td className="segment-column">--</td>
 
             {columns.map((_, idx) => {
-              const style = {
-                backgroundColor: '#fff',
-              };
+              const shouldShowSpan = idx >= spanStartIdx && idx <= spanEndIdx;
+              const isStartOfSpan = idx === spanStartIdx;
+              const isEndOfSpan = idx === spanEndIdx;
+              const spanClass = `span-segment ${
+                isStartOfSpan ? 'span-start' : isEndOfSpan ? 'span-end' : ''
+              }`;
+              const midIdx = Math.floor((spanEndIdx + spanStartIdx) / 2);
 
-              if (
-                idx >= spanStartIdx &&
-                idx <= spanEndIdx &&
-                color &&
-                !isSpanClosed
-              ) {
-                style.backgroundColor = color;
-
-                if (idx !== spanEndIdx) {
-                  style.borderRightColor = transparentColor;
-                }
-
-                if (idx === spanEndIdx) {
-                  isSpanClosed = true;
-                  style.borderLeftColor = transparentColor;
-                }
-              }
-
-              return <td className="segment-column" style={style}></td>;
+              return (
+                <td className="segment-column">
+                  {shouldShowSpan && (
+                    <div
+                      className={spanClass}
+                      style={color && { backgroundColor: color }}
+                    >
+                      {midIdx === idx && spanLength}
+                    </div>
+                  )}
+                </td>
+              );
             })}
           </tr>
         );

@@ -28,8 +28,8 @@ export const GanttChart = ({
     <table id={id} className={className}>
       <thead className="header">
         <tr>
-          <th>Tasks</th>
-          <th>--</th>
+          <th>Items</th>
+          <th></th>
           {headerLabels.map((label) => (
             <th colSpan="2">{label}</th>
           ))}

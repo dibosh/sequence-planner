@@ -68,8 +68,8 @@ export const TaskForm = ({ months, sprintNames, onAdd }) => {
         <MonthSprintInputGroup
           name="start"
           months={months}
-          month="0"
-          sprint="0"
+          month={formState.startMonth}
+          sprint={formState.startSprint}
           sprintNames={sprintNames}
           monthInputLabel="Start Month"
           sprintInputLabel="Start Sprint"
@@ -79,8 +79,8 @@ export const TaskForm = ({ months, sprintNames, onAdd }) => {
         <MonthSprintInputGroup
           name="end"
           months={months}
-          month="1"
-          sprint="0"
+          month={formState.endMonth}
+          sprint={formState.endSprint}
           sprintNames={sprintNames}
           monthInputLabel="End Month"
           sprintInputLabel="End Sprint"
