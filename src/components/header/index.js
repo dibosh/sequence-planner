@@ -4,14 +4,29 @@ import { useEffect, useState } from 'react';
 
 export const Header = ({ tasks, ganttChartId }) => {
   const [downloadableImgUrl, setDownloadableImgUrl] = useState('');
+  const [downloadableJSON, setDownloadableJSON] = useState('');
 
   useEffect(() => {
-    html2canvas(document.getElementById(ganttChartId))
-      .then((canvas) => {
-        const imgUrl = canvas.toDataURL('image/jpg');
-        setDownloadableImgUrl(imgUrl);
-      })
-      .catch((err) => console.log(`Image gen failure: ${err}`));
+    if (tasks.length > 0 && ganttChartId) {
+      html2canvas(document.getElementById(ganttChartId))
+        .then((canvas) => {
+          const imgUrl = canvas.toDataURL('image/jpg');
+          setDownloadableImgUrl(imgUrl);
+        })
+        .catch((err) => console.log(`Image gen failure: ${err}`));
+    } else {
+      setDownloadableImgUrl('');
+    }
+
+    if (tasks.length) {
+      setDownloadableJSON(
+        `data:text/json;charset=utf-8,${encodeURIComponent(
+          JSON.stringify(tasks),
+        )}`,
+      );
+    } else {
+      setDownloadableJSON('');
+    }
   }, [tasks, ganttChartId]);
 
   return (
@@ -26,15 +41,27 @@ export const Header = ({ tasks, ganttChartId }) => {
             Let's you create a sequence/gantt chart of your tasks, no fuss!
           </p>
         </div>
-        {tasks.length > 0 && (
-          <a
-            download="sequence.jpeg"
-            className="download-btn"
-            href={downloadableImgUrl}
-          >
-            Download as Image
-          </a>
-        )}
+        <div className="link-btn-group">
+          {downloadableJSON && (
+            <a
+              download="task-sequence.json"
+              className="link-btn"
+              href={downloadableJSON}
+            >
+              Export as JSON
+            </a>
+          )}
+
+          {downloadableImgUrl && (
+            <a
+              download="task-sequence.jpeg"
+              className="link-btn"
+              href={downloadableImgUrl}
+            >
+              Export as Image
+            </a>
+          )}
+        </div>
       </div>
     </header>
   );

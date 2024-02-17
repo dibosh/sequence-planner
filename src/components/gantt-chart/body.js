@@ -45,8 +45,6 @@ export const Body = ({
         return (
           <tr key={idx}>
             <td className="segment-column item-title">{label || '--'}</td>
-            <td className="segment-column">--</td>
-
             {columns.map((_, idx) => {
               const shouldShowSpan = idx >= spanStartIdx && idx <= spanEndIdx;
               const isStartOfSpan = idx === spanStartIdx;

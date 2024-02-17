@@ -29,7 +29,6 @@ export const GanttChart = ({
       <thead className="header">
         <tr>
           <th>Items</th>
-          <th></th>
           {headerLabels.map((label) => (
             <th colSpan="2">{label}</th>
           ))}

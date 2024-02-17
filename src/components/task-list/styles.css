@@ -1,5 +1,7 @@
 div.task-list-wrapper {
   padding: 12px 0;
+  height: calc(100% - 262px); /* form height is 262px */
+  overflow-y: auto;
 }
 
 p.no-tasks-info {
@@ -43,6 +45,7 @@ li.task-item:not(:last-child) {
 .task-name {
   padding: 0;
   margin: 0;
+  text-transform: capitalize;
 }
 
 .duration-pill {

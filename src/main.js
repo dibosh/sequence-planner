@@ -1,5 +1,5 @@
 import { GanttChart, TaskForm, TaskList, Header } from './components';
-import './app.css';
+import './main.css';
 import { useState } from 'react';
 
 function App() {
@@ -73,7 +73,7 @@ function App() {
   };
 
   return (
-    <div>
+    <>
       <Header tasks={tasks} ganttChartId={ganttChartId} />
       <div className="wrapper">
         <div className="app">
@@ -89,11 +89,12 @@ function App() {
             id={ganttChartId}
             className="gantt"
             headerLabels={months}
+            spanLengthLabel="sprint(s)"
             rowSpans={transformTasksToGanttChartItems()}
           />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

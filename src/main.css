@@ -1,11 +1,12 @@
 .wrapper {
   padding: 20px;
+  height: calc(100% - 66px); /* 66 is header height */
 }
 
 .app {
   display: flex;
   gap: 16px;
-  flex-wrap: none;
+  height: 100%;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -24,6 +25,7 @@
 
 .app .task-input-pane {
   flex: 0.2 0.2 0;
+  height: 100%;
 }
 
 .app .gantt {

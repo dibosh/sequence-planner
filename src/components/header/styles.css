@@ -35,17 +35,23 @@
   margin: 0;
 }
 
-.download-btn {
+.link-btn-group {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-btn {
   border: 1px solid #adb5bd;
   background-color: white;
   text-decoration: none;
   color: black;
-  padding: 8px 12px;
-  cursor: pointer;
+  padding: 4px 8px;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
-.download-btn:hover {
-  background-color: #adb5bd;
+.link-btn:hover {
+  background-color: #e9ecef;
 }

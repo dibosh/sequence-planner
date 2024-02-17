@@ -1,8 +1,17 @@
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100dvh;
+}
+
+#root {
+  height: 100%;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
 }
 
 code {
@@ -20,6 +29,7 @@ select, input, button {
   padding: 8px;
   border: 1px solid #eee;
   border-radius: 3px;
+  text-transform: capitalize;
 }
 
 /* Helper classes */

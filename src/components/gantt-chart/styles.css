@@ -14,6 +14,10 @@ table thead th {
   font-size: 12px;
 }
 
+table thead th:not(:last-child) {
+  border-right: 1px solid #eee;
+}
+
 table th,
 table td {
   border-bottom: 1px solid #eee;
