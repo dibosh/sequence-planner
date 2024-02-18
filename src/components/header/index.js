@@ -21,7 +21,7 @@ export const Header = ({ tasks, ganttChartId }) => {
     if (tasks.length) {
       setDownloadableJSON(
         `data:text/json;charset=utf-8,${encodeURIComponent(
-          JSON.stringify(tasks),
+          JSON.stringify({ tasks, generatedFrom: 'task-sequence-planner' }),
         )}`,
       );
     } else {

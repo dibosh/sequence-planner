@@ -1,6 +1,5 @@
 div.task-list-wrapper {
-  padding: 12px 0;
-  height: calc(100% - 262px); /* form height is 262px */
+  height: calc(100% - 334px); /* form height + file select pane is 334px */
   overflow-y: auto;
 }
 

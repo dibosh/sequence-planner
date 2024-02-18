@@ -1,4 +1,10 @@
-import { GanttChart, TaskForm, TaskList, Header } from './components';
+import {
+  GanttChart,
+  TaskForm,
+  TaskList,
+  Header,
+  TasksFileSelector,
+} from './components';
 import './main.css';
 import { useState } from 'react';
 
@@ -59,6 +65,12 @@ function App() {
     }
   };
 
+  const handleTasksLoadedFromFile = (tasksFromFile) => {
+    if (tasksFromFile.length > 0) {
+      setTasks(tasksFromFile);
+    }
+  };
+
   const transformTasksToGanttChartItems = () => {
     return tasks.map(
       ({ taskName, color, startMonth, startSprint, endMonth, endSprint }) => ({
@@ -77,7 +89,9 @@ function App() {
       <Header tasks={tasks} ganttChartId={ganttChartId} />
       <div className="wrapper">
         <div className="app">
-          <div className="task-input-pane">
+          <div className="task-input-pane vertical-group-gap-12px">
+            <TasksFileSelector onTasksLoad={handleTasksLoadedFromFile} />
+            <hr className="divider" data-content="or" />
             <TaskForm
               months={months}
               sprintNames={sprintNames}

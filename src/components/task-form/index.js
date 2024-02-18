@@ -59,7 +59,7 @@ export const TaskForm = ({ months, sprintNames, onAdd }) => {
           <input
             name="task-name"
             type="text"
-            placeholder="Enter a task"
+            placeholder="Enter task name..."
             value={formState.taskName}
             onChange={handleTaskNameChange}
           />

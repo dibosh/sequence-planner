@@ -31,3 +31,32 @@
 .app .gantt {
   flex: 0.8 0.8 0;
 }
+
+.divider {
+  position: relative;
+  display: flex;
+  border: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider::before {
+  content: attr(data-content);
+  text-transform: capitalize;
+  background-color: white;
+  line-height: 16px;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.divider::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  width: 100%;
+  background-color: #eee;
+  z-index: -1;
+}
