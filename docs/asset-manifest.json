@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/sequence-planner/static/css/main.4427971e.css",
-    "main.js": "/sequence-planner/static/js/main.70e9635e.js",
+    "main.css": "/sequence-planner/static/css/main.938a01fb.css",
+    "main.js": "/sequence-planner/static/js/main.134d7652.js",
     "index.html": "/sequence-planner/index.html",
-    "main.4427971e.css.map": "/sequence-planner/static/css/main.4427971e.css.map",
-    "main.70e9635e.js.map": "/sequence-planner/static/js/main.70e9635e.js.map"
+    "main.938a01fb.css.map": "/sequence-planner/static/css/main.938a01fb.css.map",
+    "main.134d7652.js.map": "/sequence-planner/static/js/main.134d7652.js.map"
   },
   "entrypoints": [
-    "static/css/main.4427971e.css",
-    "static/js/main.70e9635e.js"
+    "static/css/main.938a01fb.css",
+    "static/js/main.134d7652.js"
   ]
 }
