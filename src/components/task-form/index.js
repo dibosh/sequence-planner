@@ -36,7 +36,8 @@ export const TaskForm = ({ months, sprintNames, onAdd }) => {
   const handleMonthSprintChange = ({ name, monthSprint }) => {
     const monthSprintChange = Object.keys(monthSprint).reduce((accum, key) => {
       const val = monthSprint[key];
-      accum[`${name}${key.charAt(0).toUpperCase()}${key.slice(1)}`] = val;
+      accum[`${name}${key.charAt(0).toUpperCase()}${key.slice(1)}`] =
+        Number(val);
       return accum;
     }, {});
     setFormState({ ...formState, ...monthSprintChange });

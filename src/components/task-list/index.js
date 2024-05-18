@@ -16,7 +16,7 @@ export const TaskList = ({ tasks, onDelete }) => {
       ) : (
         <ul className="task-list">
           {tasks.map((task) => (
-            <li className="task-item">
+            <li className="task-item" key={task.taskName}>
               <div className="vertical-group task-meta">
                 <p className="task-name">{task.taskName}</p>
                 <span className="duration-pill">

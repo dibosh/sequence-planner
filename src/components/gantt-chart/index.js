@@ -30,7 +30,9 @@ export const GanttChart = ({
         <tr>
           <th>Items</th>
           {headerLabels.map((label) => (
-            <th colSpan="2">{label}</th>
+            <th colSpan="2" key={label}>
+              {label}
+            </th>
           ))}
         </tr>
       </thead>

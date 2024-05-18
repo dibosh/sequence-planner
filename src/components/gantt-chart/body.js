@@ -40,7 +40,6 @@ export const Body = ({
             ? segmentedColIndex(spanEndCol, spanEndSegment, segmentPerColumn)
             : -1;
 
-        const spanLength = spanEndIdx - spanStartIdx + 1;
 
         return (
           <tr key={idx}>
@@ -52,17 +51,14 @@ export const Body = ({
               const spanClass = `span-segment ${
                 isStartOfSpan ? 'span-start' : isEndOfSpan ? 'span-end' : ''
               }`;
-              const midIdx = Math.floor((spanEndIdx + spanStartIdx) / 2);
 
               return (
-                <td className="segment-column">
+                <td className="segment-column" key={idx}>
                   {shouldShowSpan && (
                     <div
                       className={spanClass}
                       style={color && { backgroundColor: color }}
-                    >
-                      {midIdx === idx && spanLength}
-                    </div>
+                    ></div>
                   )}
                 </td>
               );

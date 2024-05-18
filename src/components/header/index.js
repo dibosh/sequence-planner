@@ -61,6 +61,16 @@ export const Header = ({ tasks, ganttChartId }) => {
               Export as Image
             </a>
           )}
+
+          <a
+            className="github-button"
+            href="https://github.com/itsmunim/sequence-planner"
+            data-color-scheme="no-preference: dark; light: light; dark: dark;"
+            data-show-count="true"
+            aria-label="Star itsmunim/sequence-planner on GitHub"
+          >
+            Star
+          </a>
         </div>
       </div>
     </header>
